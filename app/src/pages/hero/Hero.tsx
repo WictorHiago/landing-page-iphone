@@ -97,7 +97,7 @@ export default function Hero() {
 
             <video className="" src="https://i.imgur.com/qxDg7su.mp4" autoPlay muted loop></video>
           </div>
-          <div className="card-desc flex items- justify-center min-h-[300px]">
+          <div className="card-desc flex flex-wrap justify-center min-h-[300px]">
             <div className="flex content-center m-8 card-desc-content max-w-[400px]">
               <p className="text-gray-500 text-center text-xl">
                 {descriptionAChars.map((char, index) => (
@@ -134,7 +134,7 @@ export default function Hero() {
         </div>
         <div className="flex flex-wrap justify-between">
           <CarouselInstagram slides={slides.slides} />
-          <div>
+          <div className="flex mx-auto flex-col gap-2 justify-center">
             <div className="flex flex-col gap-4">
               <h2 className="max-w-[300x] text-white text-[26px] font-bold">GPU até 20% mais rápida</h2>
               <p className="xl text-gray-500 max-w-[400px]">agora com 6 núcleos</p>

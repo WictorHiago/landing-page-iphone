@@ -2,11 +2,11 @@ import logo from "../../assets/apple-grey.png";
 export default function Navbar() {
   return (
     <>
-      <nav className="flex w-full justify-center p-4 gap-20">
+      <nav className="flex w-full justify-center p-4 gap-4 sm:gap-20">
         <div className="flex gap-4 items-center">
-          <img className="h-6 w-5" src={logo} alt="" />
+          <img className="h-6 w-5 " src={logo} alt="" />
           <a href="">
-            <h1 className="text-white text-3xl font-bold">Wic Store</h1>
+            <h1 className="text-white text-3xl font-bold hidden sm:block">Wic Store</h1>
           </a>
         </div>
 

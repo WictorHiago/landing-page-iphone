@@ -2,11 +2,7 @@ import { useEffect, useState } from "react";
 import { IPropsSlides } from "./IPropsSlides";
 import { MdNavigateNext } from "react-icons/md";
 
-export default function CarouselInstagram({
-  slides,
-  autoSlide = false,
-  delay = 3000,
-}: IPropsSlides) {
+export default function CarouselInstagram({ slides, autoSlide = false, delay = 3000 }: IPropsSlides) {
   const [curr, setCurr] = useState(0);
 
   const prev = () => {
@@ -28,18 +24,10 @@ export default function CarouselInstagram({
 
   return (
     <>
-      <div className="overflow-hidden w-[270px] relative">
-        <div
-          className="flex"
-          style={{ transform: `translateX(-${curr * 100}%)` }}
-        >
+      <div className="mx-auto my-8 overflow-hidden w-[270px] relative">
+        <div className="flex" style={{ transform: `translateX(-${curr * 100}%)` }}>
           {slides.map((slide: string, index) => (
-            <img
-              key={index}
-              className="w-[270px] h-full object-cover"
-              src={slide}
-              alt="instagram"
-            />
+            <img key={index} className="w-[270px] h-full object-cover" src={slide} alt="instagram" />
           ))}
         </div>
         <div className="absolute inset-0 flex items-center justify-between p-4">
