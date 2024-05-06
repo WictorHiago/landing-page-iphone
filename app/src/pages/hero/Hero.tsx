@@ -1,21 +1,28 @@
-import React from "react";
+import CarouselInstagram from "../../components/carousel/Carousel";
+import { IPropsSlides } from "../../components/carousel/IPropsSlides";
 import SplitText from "./SplitText";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const heading = "Iphone 15 Pro Max";
-  const text =
-    "lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
   const descriptionA =
     "A estrutura de titânio é fixada por meio de difusão em estado sólido em um novo quadro interno de alumínio. Uma inovação na indústria, com processo termomecânico que une os dois metais com uma pressão altíssima.";
   const descriptionB =
     "O quadro interno também é feito com 100% de alumínio reciclado, o que amplia o uso total de materiais reciclados e ajuda a atingir nossos objetivos climáticos para 2030.";
 
   const headingChars = SplitText(heading);
-  const textChars = SplitText(text);
   const descriptionAChars = SplitText(descriptionA);
   const descriptionBChars = SplitText(descriptionB);
 
+  const slides: IPropsSlides = {
+   slides:
+    [
+     "https://i.imgur.com/1wH3ySf.jpeg",
+    "https://i.imgur.com/BpIZCXT.jpeg",
+    "https://i.imgur.com/TdBIqtE.jpeg",
+    "https://i.imgur.com/QGdE0k2.jpeg"
+   ] 
+  }
   const variants = {
     hidden: {
       opacity: 0,
@@ -95,19 +102,7 @@ export default function Hero() {
                 </motion.span>
               ))}
             </h1>
-            <p className="text-white text-center">
-              {textChars.map((char, index) => (
-                <motion.span
-                  key={index * 0.1}
-                  transition={{ delay: index * 0.01 }}
-                  variants={variants}
-                  whileInView={"reaveal"}
-                  initial="hidden"
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </p>
+            
             <video
               className=""
               src="https://i.imgur.com/qxDg7su.mp4"
@@ -117,8 +112,8 @@ export default function Hero() {
             ></video>
           </div>
           <div className="card-desc flex items- justify-center min-h-[300px]">
-            <div className="card-desc-content transition duration-300 delay-100 ease-in-out max-w-[400px] border-2 border-black hover:border-gray-700">
-              <p className="text-gray-500 text-center ">
+            <div className="flex content-center m-8 card-desc-content max-w-[400px]">
+              <p className="text-gray-500 text-center text-xl">
                 {descriptionAChars.map((char, index) => (
                   <motion.span
                     key={index * 0.1}
@@ -133,8 +128,8 @@ export default function Hero() {
                 ))}
               </p>
             </div>
-            <div className="card-desc-content transition duration-300 delay-100 ease-in-out max-w-[400px] border-2 border-black hover:border-gray-700">
-              <p className="text-gray-500 text-center">
+            <div className="flex content-center m-8 card-desc-content max-w-[400px]">
+              <p className="text-gray-500 text-center text-xl">
                 {descriptionBChars.map((char, index) => (
                   <motion.span
                     key={index * 0.1}
@@ -150,6 +145,9 @@ export default function Hero() {
               </p>
             </div>
           </div>
+        </div>
+        <div className="flex">
+        <CarouselInstagram slides={slides.slides}  />
         </div>
       </section>
     </>
