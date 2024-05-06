@@ -55,7 +55,7 @@ export default function Hero() {
         </div>
         <div className="flex flex-col">
           <h1 className="text-white text-center text-3xl">Um iPhone forjado em titânio.</h1>
-          <div className="flex justify-center gap-40 my-20">
+          <div className="flex justify-center flex-wrap gap-40 my-20">
             <div className="flex flex-col items-center">
               <img
                 className="h-96 max-w-[418px]"
